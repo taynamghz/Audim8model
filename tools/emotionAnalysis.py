@@ -3,10 +3,10 @@ import librosa
 import numpy as np
 from deepface import DeepFace
 from moviepy.editor import VideoFileClip
-from scipy.io import wavfile
 import os
+import statistics
 
-class VideoEmotionAnalysisTool:
+class VideoEmotionAnalysisWithStatsTool:
     def __init__(self, video_path):
         self.video_path = video_path
         self.audio_path = "extracted_audio.wav"
@@ -22,7 +22,7 @@ class VideoEmotionAnalysisTool:
         Analyzes both facial expressions and audio for emotional features.
         
         Returns:
-            dict: A dictionary containing emotion data for both visual and audio.
+            dict: A dictionary containing emotion data with statistical analysis.
         """
         # Facial emotion analysis from video frames
         video_emotions = self.analyze_facial_emotions()
@@ -43,13 +43,15 @@ class VideoEmotionAnalysisTool:
 
     def analyze_facial_emotions(self):
         """
-        Analyzes the facial expressions in the video to detect emotions.
+        Analyzes the facial expressions in the video to detect emotions and calculates statistics.
         
         Returns:
-            dict: Facial emotion data.
+            dict: Facial emotion data with statistics.
         """
         video_capture = cv2.VideoCapture(self.video_path)
         facial_emotions = []
+        emotion_counts = {}
+        frame_count = 0
 
         while True:
             ret, frame = video_capture.read()
@@ -60,21 +62,31 @@ class VideoEmotionAnalysisTool:
             result = DeepFace.analyze(frame, actions=['emotion'])
             dominant_emotion = result[0]['dominant_emotion']
             facial_emotions.append(dominant_emotion)
+            
+            # Count emotion occurrences
+            emotion_counts[dominant_emotion] = emotion_counts.get(dominant_emotion, 0) + 1
+            frame_count += 1
 
         video_capture.release()
 
-        # Calculate the most frequent emotion
-        most_common_emotion = max(set(facial_emotions), key=facial_emotions.count)
+        # Statistics for facial emotions
+        emotion_frequency = {emotion: count / frame_count for emotion, count in emotion_counts.items()}
+        most_common_emotion = max(emotion_counts, key=emotion_counts.get)
+        emotion_consistency = statistics.stdev([emotion_counts[emotion] for emotion in emotion_counts]) / frame_count
 
-        # Return the dominant facial emotion
-        return {"DominantFacialEmotion": most_common_emotion, "EmotionPerFrame": facial_emotions}
+        return {
+            "DominantFacialEmotion": most_common_emotion,
+            "EmotionPerFrame": facial_emotions,
+            "EmotionFrequency": emotion_frequency,
+            "EmotionConsistency": emotion_consistency
+        }
 
     def analyze_audio_emotions(self):
         """
-        Analyzes the audio (from the extracted .wav file) for emotional features such as pitch, tone, volume, etc.
+        Analyzes the audio (from the extracted .wav file) for emotional features and calculates statistics.
         
         Returns:
-            dict: Audio emotion data.
+            dict: Audio emotion data with statistics.
         """
         # Load audio file
         y, sr = librosa.load(self.audio_path, sr=None)
@@ -92,11 +104,28 @@ class VideoEmotionAnalysisTool:
         # Rhythm analysis (using tempo and onset detection)
         rhythm_pattern = self.calculate_rhythm_pattern(y, sr)
 
+        # Calculate pitch statistics
+        pitch_values = pitch[pitch > 0]  # Filter out zeros (no pitch)
+        pitch_stats = {
+            "PitchAvg": np.mean(pitch_values),
+            "PitchStdDev": np.std(pitch_values),
+            "PitchMedian": np.median(pitch_values)
+        }
+
+        # Volume statistics
+        volume_stats = {
+            "VolumeAvg": np.mean(np.abs(y)),
+            "VolumeMax": np.max(np.abs(y)),
+            "VolumeMin": np.min(np.abs(y))
+        }
+
         return {
             "PitchRange": pitch_range,
             "VolumeLevel": volume_level,
             "ToneType": tone_type,
-            "RhythmPattern": rhythm_pattern
+            "RhythmPattern": rhythm_pattern,
+            "PitchStats": pitch_stats,
+            "VolumeStats": volume_stats
         }
 
     def calculate_pitch_range(self, pitch):
