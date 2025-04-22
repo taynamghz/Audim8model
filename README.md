@@ -1,13 +1,13 @@
 # Audim8
 Audimate – AI-Powered Casting Assistant for the Saudi Film Industry
 
-Description
+# Description
 
 Audimate is a localized, AI-driven casting assistant built to streamline and modernize the audition process for the Saudi film and television industry. It leverages advanced video and speech analysis to evaluate self-taped auditions, helping directors identify the best talent based on emotional tone, facial expressions, vocal delivery, and character alignment.
 
 Designed with the needs of Saudi productions in mind, Audimate supports Arabic language input and cultural context, integrating local datasets and tools provided by the Saudi Ministry of Media, SADAIA, and the Arabic large language model, Allam. The platform ensures faster, more objective, and culturally aware talent selection for a growing and competitive creative market.
 
-Key Features
+# Key Features
 
 Localized AI Audition Filtering
 Designed specifically for the Saudi market, incorporating Arabic language processing and cultural understanding using Allam and datasets from local government institutions.
