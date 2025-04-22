@@ -3,7 +3,7 @@
 </p>
 # Audimate – AI-Powered Casting Assistant for the Saudi Film Industry
 
-## 🧠 Overview
+## What is Audimate?
 
 **Audimate** is a localized, AI-driven casting assistant built to streamline and modernize the audition process for the **Saudi film and television industry**. It leverages advanced multimodal AI and an agent-based system to evaluate self-taped auditions based on **emotional tone**, **facial expressions**, **vocal delivery**, and **character alignment**.
 
