@@ -1,95 +1,113 @@
-# Audim8
-Audimate – AI-Powered Casting Assistant for the Saudi Film Industry
+# Audimate – AI-Powered Casting Assistant for the Saudi Film Industry
 
-# Description
+## 🧠 Overview
 
-Audimate is a localized, AI-driven casting assistant built to streamline and modernize the audition process for the Saudi film and television industry. It leverages advanced video and speech analysis to evaluate self-taped auditions, helping directors identify the best talent based on emotional tone, facial expressions, vocal delivery, and character alignment.
+**Audimate** is a localized, AI-driven casting assistant built to streamline and modernize the audition process for the **Saudi film and television industry**. It leverages advanced multimodal AI and an agent-based system to evaluate self-taped auditions based on **emotional tone**, **facial expressions**, **vocal delivery**, and **character alignment**.
 
-Designed with the needs of Saudi productions in mind, Audimate supports Arabic language input and cultural context, integrating local datasets and tools provided by the Saudi Ministry of Media, SADAIA, and the Arabic large language model, Allam. The platform ensures faster, more objective, and culturally aware talent selection for a growing and competitive creative market.
+Built using [CrewAI](https://github.com/crewAIInc/crewAI)'s modular agent architecture, Audimate automates the casting pipeline, incorporating Arabic-language support and cultural intelligence powered by:
 
-# Key Features
+- **Allam**: Saudi Arabia's Arabic Large Language Model
+- **SADAIA & Ministry of Media datasets**: for cultural and linguistic localization
+- **Multimodal AI models**: for video, speech, and text analysis
 
-Localized AI Audition Filtering
-Designed specifically for the Saudi market, incorporating Arabic language processing and cultural understanding using Allam and datasets from local government institutions.
-Script-Based Character Matching
-Allows directors to input role descriptions or upload full scripts. Audimate extracts character traits and matches them with actor performances using LLM-powered analysis.
-Emotion and Expression Analysis
-Evaluates videos for facial expressions, vocal tone, and emotional cues to determine alignment with target characters.
-Smart Shortlisting
-Automatically ranks audition videos based on relevance, helping casting teams quickly identify top candidates.
-Efficiency and Time Savings
-Reduces audition review time by up to 80%, transforming a 50+ hour manual process into a streamlined digital workflow.
-Real-Time Learning and Feedback Integration
-Improves results over time by incorporating director feedback into the ranking algorithm.
-Scalable Across Media Formats
-Initially focused on feature films, with planned expansion to series, commercials, and streaming productions.
-Why Audimate
+---
 
-Audimate was created to solve a pressing challenge in the Saudi film industry: the slow, subjective, and labor-intensive audition process. As local productions scale in volume and ambition, there is a growing need for tools that support efficient, objective, and culturally relevant casting.
+## 🚀 Key Features
 
-By combining AI-powered analysis with Saudi-specific datasets and tools like Allam, Audimate enables:
+### 🎯 Localized AI Audition Filtering
+- Designed specifically for the Saudi market
+- Supports Arabic text, dialects, and performance nuances
+- Uses Saudi-specific datasets and the Allam LLM
 
-Faster and more accurate casting decisions
-Discovery and promotion of emerging Saudi talent
-Better alignment with script and character goals
-Reduced reliance on instinct or bias in decision-making
-Integration with the evolving Saudi creative ecosystem
-Audimate is not just a casting tool—it is a foundational step toward building a data-informed, scalable future for Saudi cinema and television.
+### 📜 Script-Based Character Matching
+- Directors upload role descriptions or scripts
+- An LLM agent extracts emotional and psychological traits
+- Example output:  
+  `Female, 30s, quiet intensity, emotional resilience, conservative appearance`
 
-🏗️ Installation
+### 🧠 Hybrid Trait Matching
+- Manual override and customization of extracted traits
+- Presets like “charismatic outsider” or “villain with a conscience”
 
-Ensure you have Python >=3.10 <3.13 installed on your system.​
-GitHub
+### 🎥 AI-Driven Performance Analysis
+- Video evaluation using models like **MediaPipe** and **OpenCV**
+- Facial emotion recognition, body language cues, vocal tone scoring
+- Speech and tone analysis using **Whisper** and **pyAudioAnalysis**
 
-Install Project Name using pip:
+### 📊 Smart Shortlisting
+- Actors are matched to character profiles using similarity scoring
+- Outputs a ranked shortlist of best-fit performers
 
-pip install project-name
-For additional tools, use:​
-GitHub
+### 🔁 Real-Time Feedback Learning
+- Director feedback trains the system over time
+- Adaptive trait weighting for continuous improvement
 
-pip install 'project-name[tools]'
-🧠 Getting Started
+### 🛠️ Agent-Based Workflow (CrewAI)
+- **Script Analyst Agent**: Parses uploaded scripts
+- **Rubric Editor Agent**: Enables director to refine traits
+- **Video Analyzer Agent**: Processes and scores video submissions
+- **Matching Agent**: Ranks talent by match score
+- **Learning Agent**: Integrates director feedback into future rankings
 
-Here's a simple example to demonstrate how to set up and run a basic agent using Project Name:​
-GitHub
+### 📈 Scalable & Extensible
+- Initially focused on feature films
+- Roadmap includes support for:
+  - Series
+  - Commercials
+  - Streaming content
+  - Integration with script breakdown and compliance tools
 
-from project_name import Agent, Crew
+---
 
-# Define your agent
-agent = Agent(
-    role='Researcher',
-    goal='Analyze market trends',
-    backstory='An expert in market analysis with 10 years of experience.'
-)
+## 🤖 Tech Stack
 
-# Create a crew with the agent
-crew = Crew(agents=[agent])
+| Layer             | Technology / Model                              | Purpose                                       |
+|------------------|--------------------------------------------------|-----------------------------------------------|
+| NLP               | GPT-4 / Allam                                    | Character trait extraction from scripts       |
+| Speech Analysis   | Whisper, pyAudioAnalysis                         | Emotion and vocal profile detection           |
+| Video Analysis    | MediaPipe, DeepFace, OpenCV                      | Facial expression and body language analysis  |
+| Agent Framework   | [CrewAI](https://github.com/crewAIInc/crewAI)   | Modular orchestration of AI tasks             |
+| Learning Engine   | Custom feedback-based trait reweighting system  | Improves over time using director input       |
 
-# Run the crew
-crew.run()
-For more detailed examples and advanced configurations, refer to the examples directory.​
+---
 
-📚 Documentation
+## 🌍 Why Audimate?
 
-Comprehensive documentation is available at docs.projectname.com, covering:​
+The Saudi film industry is growing fast—but casting remains slow, subjective, and labor-intensive. Audimate solves this by:
 
-Installation and setup
-Agent and crew configurations
-Advanced workflows and integrations
-API reference​
-🛠️ Contributing
+- Reducing review time by up to **80%**
+- Delivering consistent, objective evaluations
+- Empowering discovery of emerging **Saudi talent**
+- Supporting directors with **data-driven** recommendations
+- Aligning casting decisions with cultural and narrative goals
 
-We welcome contributions from the community! To contribute:​
-GitHub
+Audimate is not just a casting tool—it’s a step toward a smarter, scalable, and culturally aware creative industry in Saudi Arabia.
 
-Fork the repository
-Create a new branch (git checkout -b feature/your-feature)
-Commit your changes (git commit -am 'Add new feature')
-Push to the branch (git push origin feature/your-feature)
-Create a new Pull Request​
-GitHub
-Please ensure your code adheres to our contribution guidelines.​
+---
 
-📄 License
+## 📦 Project Status
 
-This project is licensed under the MIT License. See the LICENSE file for details.​
+- ✅ MVP: Trait extraction, video analysis, shortlisting
+- 🚧 In Progress: Web dashboard and dataset onboarding
+- 🔜 Coming Soon: Arabic speech emotion classifier, talent database, production CRM integration
+
+---
+
+## 📂 Folder Structure (Planned)
+
+```bash
+audimate/
+├── agents/
+│   ├── script_agent.py
+│   ├── rubric_agent.py
+│   ├── video_agent.py
+│   └── feedback_agent.py
+├── data/
+│   ├── sample_scripts/
+│   └── audition_videos/
+├── models/
+│   └── emotion_classifier.pkl
+├── dashboard/
+│   └── streamlit_app.py
+├── README.md
+└── requirements.txt
