@@ -1,17 +1,41 @@
-# Audim8model
-🚀 Project Name
+# Audim8
+Audimate – AI-Powered Casting Assistant for the Saudi Film Industry
 
-Fast and Flexible Multi-Agent Automation Framework​
+Description
 
-Project Name is a lean, lightning-fast Python framework built entirely from scratch—completely independent of external agent frameworks. It empowers developers with both high-level simplicity and precise low-level control, ideal for creating autonomous AI agents tailored to any scenario.​
-GitHub
+Audimate is a localized, AI-driven casting assistant built to streamline and modernize the audition process for the Saudi film and television industry. It leverages advanced video and speech analysis to evaluate self-taped auditions, helping directors identify the best talent based on emotional tone, facial expressions, vocal delivery, and character alignment.
 
-✨ Key Features
+Designed with the needs of Saudi productions in mind, Audimate supports Arabic language input and cultural context, integrating local datasets and tools provided by the Saudi Ministry of Media, SADAIA, and the Arabic large language model, Allam. The platform ensures faster, more objective, and culturally aware talent selection for a growing and competitive creative market.
 
-Standalone Framework: Built from scratch, independent of external agent frameworks.
-High Performance: Optimized for speed and minimal resource usage, enabling faster execution.
-Flexible Low-Level Customization: Complete freedom to customize at both high and low levels—from overall workflows and system architecture to granular agent behaviors, internal prompts, and execution logic.​
-GitHub
+Key Features
+
+Localized AI Audition Filtering
+Designed specifically for the Saudi market, incorporating Arabic language processing and cultural understanding using Allam and datasets from local government institutions.
+Script-Based Character Matching
+Allows directors to input role descriptions or upload full scripts. Audimate extracts character traits and matches them with actor performances using LLM-powered analysis.
+Emotion and Expression Analysis
+Evaluates videos for facial expressions, vocal tone, and emotional cues to determine alignment with target characters.
+Smart Shortlisting
+Automatically ranks audition videos based on relevance, helping casting teams quickly identify top candidates.
+Efficiency and Time Savings
+Reduces audition review time by up to 80%, transforming a 50+ hour manual process into a streamlined digital workflow.
+Real-Time Learning and Feedback Integration
+Improves results over time by incorporating director feedback into the ranking algorithm.
+Scalable Across Media Formats
+Initially focused on feature films, with planned expansion to series, commercials, and streaming productions.
+Why Audimate
+
+Audimate was created to solve a pressing challenge in the Saudi film industry: the slow, subjective, and labor-intensive audition process. As local productions scale in volume and ambition, there is a growing need for tools that support efficient, objective, and culturally relevant casting.
+
+By combining AI-powered analysis with Saudi-specific datasets and tools like Allam, Audimate enables:
+
+Faster and more accurate casting decisions
+Discovery and promotion of emerging Saudi talent
+Better alignment with script and character goals
+Reduced reliance on instinct or bias in decision-making
+Integration with the evolving Saudi creative ecosystem
+Audimate is not just a casting tool—it is a foundational step toward building a data-informed, scalable future for Saudi cinema and television.
+
 🏗️ Installation
 
 Ensure you have Python >=3.10 <3.13 installed on your system.​
