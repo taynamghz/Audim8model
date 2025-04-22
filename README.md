@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://your-image-url.com/banner.png" alt="Audimate Logo or Banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/taynamghz/Audim8model/main/audimatelogov5-txt.png" alt="Audimate Logo" width="100%" />
 </p>
 # Audimate – AI-Powered Casting Assistant for the Saudi Film Industry
 
