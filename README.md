@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://your-image-url.com/banner.png" alt="Audimate Logo or Banner" width="100%" />
+</p>
 # Audimate – AI-Powered Casting Assistant for the Saudi Film Industry
 
 ## 🧠 Overview
